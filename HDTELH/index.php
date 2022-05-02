@@ -2,8 +2,8 @@
 require_once "includes/functions.php";
 session_start();
 
-// Retrieve all movies
-//$movies = getDb()->query('select * from movie order by mov_id desc'); 
+// Retrieve all histoires
+$histoires = getDb()->query('select * from liste_histoire order by Id_Hist desc'); 
 ?>
 
 <!doctype html>
@@ -16,12 +16,13 @@ session_start();
         <?php require_once "includes/header.php"; ?>
 
         <?php
-        /* foreach ($movies as $movie) { ?>
+         foreach ($histoires as $histoire) { ?>
             <article>
-                <h3><a class="movieTitle" href="movie.php?id=<?= $movie['mov_id'] ?>"><?= $movie['mov_title'] ?></a></h3>
-                <p class="movieContent"><?= $movie['mov_description_short'] ?></p>
+                <img src= "images/<?=$histoire['Im_Hist']?>" alt="Image de Patate" style="width:200px; height:auto">
+                <h3><a class= "" href= "histoire.php?id=<?=  $histoire['Id_Hist'] ?>"><?=  $histoire['Titre_Hist'] ?></a></h3>
+                <p class= "histoireContent"><?=  $histoire['Resume_Hist'] ?></p>
             </article>
-        <?php } */?>
+        <?php } ?>
 
         <?php require_once "includes/footer.php"; ?>
     </div>
