@@ -5,12 +5,13 @@ session_start();
 if (!empty($_POST['login']) and !empty($_POST['password'])) {
     $login = $_POST['login'];
     $password = $_POST['password'];
-    $stmt = getDb()->prepare('select * from user where usr_login=? and usr_password=?');
+    $stmt = getDb()->prepare('select * from user_et_admin where Login_User=? and Mdp_User=?');
     $stmt->execute(array($login, $password));
     if ($stmt->rowCount() == 1) {
         // Authentication successful
         $_SESSION['login'] = $login;
         redirect("index.php");
+        // isUserConnected == TRUE; 
     }
     else {
         $error = "Utilisateur non reconnu";

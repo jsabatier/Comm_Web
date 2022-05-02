@@ -1,3 +1,4 @@
-# MyMovies-correction
+# Projet_Comm_WEB
 
-Activité web de l'ENSC.
+Projet de communication web de l'ENSC.
+Fait par Pauline B
