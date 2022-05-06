@@ -29,6 +29,7 @@ require_once "includes/head.php";
             <div class="row">
                 <div class="col-md-5 col-sm-7">
                     <img class="img-responsive movieImage" src="images/<?= $histoire['Im_Hist'] ?>" title="<?= $histoire['Titre_Hist'] ?>" style="width:200px; height:auto" />
+                <br/>
                 </div>
                 <div class="col-md-7 col-sm-5">
                     <h2><?= $histoire['Titre_Hist'] ?></h2>

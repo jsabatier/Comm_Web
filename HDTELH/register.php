@@ -21,11 +21,13 @@ session_start(); ?>
                <input type="text" name="login" value=""><br>
                Mot de passe<br>
                <input type="password" name="password" value=""><br>
-               Vous êtes<br>
+               Vous voulez être : <br>
                <select name="niv">
                   <option value="1">Admin</option>
                   <option value="0">Lecteur</option>
-               </select><br>
+               </select>
+            </br>
+            </br>
                <input type="submit" name="envoyer" value="inscrire">
             </fieldset>
          </form>

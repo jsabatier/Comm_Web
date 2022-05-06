@@ -14,16 +14,24 @@ $histoires = getDb()->query('select * from liste_histoire order by Id_Hist desc'
 <body>
     <div class="container">
         <?php require_once "includes/header.php"; ?>
-
+        
+        <div class ="container m2">
         <?php
          foreach ($histoires as $histoire) { ?>
-            <article>
-                <img src= "images/<?=$histoire['Im_Hist']?>" alt="Image de Patate" style="width:200px; height:auto">
+            <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-5 col-sm-7">
+                <img src= "images/<?=$histoire['Im_Hist']?>" alt="<?=$histoire['Im_Hist']?>" style="width:200px; height:auto">
+                </div>
+                <div class="col-md-7 col-sm-5">
                 <h3><a class= "" href= "histoire.php?id=<?=  $histoire['Id_Hist'] ?>"><?=  $histoire['Titre_Hist'] ?></a></h3>
                 <p class= "histoireContent"><?=  $histoire['Resume_Hist'] ?></p>
-            </article>
+                </h2>
+            </div>
+        </div>
+            
         <?php } ?>
-
+        
         <?php require_once "includes/footer.php"; ?>
     </div>
 
