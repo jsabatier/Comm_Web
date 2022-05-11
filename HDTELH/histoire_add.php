@@ -28,7 +28,12 @@ if (isUserConnected()) {
         (Titre_Hist, Resume_Hist, Im_Hist)
         values (?, ?, ?)');
         $stmt->execute(array($title, $shortDescription, $image));
-        redirect("paragraphe_add.php");
+
+        $histoire = getDb()->prepare ('select Id_Hist from liste_histoire where Titre_Hist=?');
+        $histoire->execute(array($title));
+        $rq = $histoire->fetch();
+      
+        redirect("paragraphe_add.php?id={$rq['Id_Hist']}");
 
       }
     ?>
