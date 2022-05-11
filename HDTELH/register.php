@@ -28,7 +28,7 @@ session_start(); ?>
                </select>
             </br>
             </br>
-               <input type="submit" name="envoyer" value="inscrire">
+               <input type="submit" name="envoyer" value="S'inscrire">
             </fieldset>
          </form>
 

@@ -35,6 +35,11 @@ require_once "includes/head.php";
                     <h2><?= $histoire['Titre_Hist'] ?></h2>
                     <p><small><?= $histoire['Resume_Hist'] ?></small></p>
                 </h2>
+                
+<form name="lireHist" method="post" action="paragraphe.php?id=<?=  $histoire['Id_Hist'] ?>&idp=<?=1?>">
+            <input type="submit" name="lire" value="Lire l'histoire">
+</form>
+            
             </div>
         </div>
     </div>

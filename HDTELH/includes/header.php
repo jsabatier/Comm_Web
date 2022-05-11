@@ -1,6 +1,6 @@
 <?php require_once "functions.php"; ?>
 
-<nav class="navbar navbar-default navbar-fixed-top text-light" role="navigation">
+<nav class="navbar bg-dark navbar-default navbar-fixed-top text-light rounded" role="navigation">
     
         <div class="container">
             <a class="navbar-brand" href="index.php">
@@ -18,19 +18,19 @@
             <ul class="nav navbar-nav navbar-right">
                 <?php if (isUserConnected()) { ?>
                     <li class="container">
-                        <a href="#" class="navbar-item" >
+                        <a href="#" class="nav navbar-nav" >
                             <span class="glyphicon glyphicon-user"></span> Bienvenue, <?= $_SESSION['login'] ?> <b class="caret"></b>
                         </a>
-                        <ul class="navbar-item">
+                        <ul class="nav navbar-nav">
                             <li><a href="logout.php">Se déconnecter</a></li>
                         </ul>
                     </li>
                 <?php } else { ?>
                     <li class="container">
-                        <ul class="navbar-item">
+                        <ul class="nav navbar-nav">
                             <li><a href="login.php">Se connecter</a></li>
                         </ul>
-                        <ul class="navbar-item">
+                        <ul class="nav navbar-nav">
                             <li><a href="register.php">S'incrire</a></li>
                         </ul>
                     </li>

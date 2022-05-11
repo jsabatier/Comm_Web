@@ -7,16 +7,10 @@ $stmt = getDb()->prepare('select * from liste_histoire where Id_Hist=?');
 $stmt->execute(array($Id_Hist));
 $histoire = $stmt->fetch(); // Access first (and only) result line
 
+$para = getDb()->prepare('select * from paragraphe where Id_Hist=?');
+$para->execute(array($Id_Hist));
+$paragraphe = $para->fetchAll();
 
-$Id_Para =$_GET['idp'];
-$para = getDb()->prepare('select * from paragraphe where Id_Hist=? and Id_Para=?');
-$para->execute(array($Id_Hist,$Id_Para));
-$paragraphe = $para->fetch();
-
-//$Id_Choix =$_GET['idc'];
-$choix = getDb()->prepare('select * from choix where Id_Hist=? and Id_Para=?');
-$choix->execute(array($Id_Hist,$Id_Para));
-$leschoix = $choix->fetchAll();
 ?>
 
 <!doctype html>
@@ -31,11 +25,18 @@ require_once "includes/head.php";
     <div class="container">
         <?php require_once "includes/header.php"; ?>
 
-        <div class="container rounded bg-white">
+        <div class="container rounded bg-dark p-2">
             
                 <div class="m-2">
                 <p class= "histoireContent">
-                    <?= $paragraphe['Text_Para'] ?>
+                <?php
+                    foreach ($paragraphe as $para) { 
+                        ?>
+                        <textarea cols="140" rows="5"><?= $para['Text_Para'] ?></textarea>
+                        <?= $choix['Text_Choix'] ?>
+                    </br>    
+                <?php } ?>
+                    
                 </p>
                 </div>
                 <div>
@@ -59,5 +60,3 @@ require_once "includes/head.php";
 </body>
 
 </html>
-
-

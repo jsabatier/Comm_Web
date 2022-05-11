@@ -2,11 +2,11 @@
 
 require_once "includes/functions.php";
 
-print_r($_POST);
+//print_r($_POST);
 
-    if (!empty($_POST['nom']) && !empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST['niv'])) {
+    if (!empty($_POST['nom']) && !empty($_POST['login']) && !empty($_POST['password']) && isset($_POST['niv'])) {
         
-
+        /*print_r($_POST);*/
         $nom = $_POST['nom'];
         $login = $_POST['login'];
         $password = $_POST['password'];

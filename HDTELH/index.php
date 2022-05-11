@@ -9,15 +9,20 @@ $histoires = getDb()->query('select * from liste_histoire order by Id_Hist desc'
 <!doctype html>
 <html>
 
-<?php require_once "includes/head.php"; ?>
+<?php require_once "includes/head.php";
+      require_once "includes/background.php"; ?>
 
 <body>
-    <div class="container">
+
+</div>
+
+    <div class="container ">
         <?php require_once "includes/header.php"; ?>
         
-        <div class ="container m2">
+        <div class ="container bg-dark rounded p-5">
         <?php
          foreach ($histoires as $histoire) { ?>
+           
             <div class="jumbotron">
             <div class="row">
                 <div class="col-md-5 col-sm-7">
@@ -28,6 +33,7 @@ $histoires = getDb()->query('select * from liste_histoire order by Id_Hist desc'
                 <p class= "histoireContent"><?=  $histoire['Resume_Hist'] ?></p>
                 </h2>
             </div>
+        
         </div>
             
         <?php } ?>
