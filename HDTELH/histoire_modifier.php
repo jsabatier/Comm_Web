@@ -28,10 +28,12 @@ require_once "includes/head.php";
         <div class="container rounded bg-dark p-2">
         <h2 class="text-center">Modification d'une histoire</h2>
                 <div class="m-2">
+                    <form class="form-signin form-horizontal" role="form" action="update_paragraphe.php?id=<?=$Id_Hist?>&&nbp=<?=$nbpara?>" method="post">
                 <p class= "histoireContent">
                 <?php
+                    $nbpara;
                     foreach ($paragraphe as $para) { 
-                        ?>
+                        $nbpara = $nbpara +1;?>
                         <textarea cols="140" rows="5"><?= $para['Text_Para'] ?></textarea>
                         <?= $choix['Text_Choix'] ?>
                     </br>    
@@ -50,7 +52,10 @@ require_once "includes/head.php";
 
                         
                 <?php } ?>
-                </div>
+                <input type="submit" name ="modif" value="Modifier"/>
+                
+            </form> 
+            </div>
         </div>
 
     <?php require_once "includes/footer.php"; ?>

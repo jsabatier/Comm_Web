@@ -16,7 +16,7 @@ require_once "includes/functions.php";
             echo $k." ".$p."     ";}*/
 
         print_r($para);
-                $stmt3 = getDb()->prepare('INSERT INTO `paragraphe` (`Id_Hist`,`Id_Para`,`Text_Para`) VALUES (:idh,:idp,:para)');
+                $stmt3 = getDb()->prepare('Update `Text_Para` from `paragraphe` where (`Id_Hist`,`Id_Para`) VALUES (:idh,:idp)');
                 $stmt3->execute(array(
                 'idh' => $Id_Hist,
                 'idp' => $n,

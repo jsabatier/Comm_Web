@@ -35,19 +35,14 @@ if (!empty($_POST['nbpara'])) {
                 for($j=1;$j<=3;$j++){ ?>
                 
                     <div class="col">
-                        <input type="text" name="choix<?=$j?>" class="form-control" placeholder="Entrez votre choix" required>
+                        <input type="text" name="choix<?=$j?>" class="form-control" placeholder="Entrez votre choix">
                     </div>
                     <div class="col">
-                        <input type="number" name="paraSuivant<?=$j?>" class="form-control" required>
+                        <input type="number" name="paraSuivant<?=$j?>" class="form-control"placeholder="Entrez le paragraphe suivant">
                     </div>
                 <?php }?>
                 <div class="form-group row">
-                <?php /*for($i=1;$i<=3;$i++){ ?>
-                
-                    <div class="col">
-                        <input type="number" name="paraSuivant<?=$i?>" class="form-control" required>
-                    </div>
-                <?php }*/}?>
+                <?php }?>
                 </div>
                 <input type="submit" name ="creer" value="Créer"/>
                 
