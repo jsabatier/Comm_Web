@@ -43,12 +43,22 @@ require_once "includes/head.php";
                     foreach ($leschoix as $choix) { 
                         ?>
                         <a href="paragraphe.php?id=<?=  $histoire['Id_Hist'] ?>&idp=<?= $choix['Id_Para_Suivant']?>" class="choix">
-                        <?= $choix['Text_Choix'] ?>
+                        <?= $choix['Text_Choix'] 
+                        ?>
                     </br>
+
+                    
                         </a>
 
                         
                 <?php } ?>
+                <?php 
+                    
+                    if($Id_Para==0)
+                        {
+                            redirect("fin.php"); ?>
+                         
+                       <?php } ?>
                 </div>
         
 

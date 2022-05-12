@@ -20,38 +20,44 @@ session_start(); ?>
 if (!empty($_POST['nbpara'])) {
     $nbpara= $_POST['nbpara'];?>
     <div class="well">
-            <form class="form-signin form-horizontal" role="form" action="insert_paragraphe.php?id=<?=$Id_Hist?>&&nbp=<?=$nbpara?>" method="post">
-            <div class="container m-2">
+    <form class="form-signin form-horizontal" role="form" action="insert_paragraphe.php?id=<?=$Id_Hist?>&&nbp=<?=$nbpara?>" method="post">
+    <div class="container m-2">
     <?php
     for($n=1;$n<=$nbpara;$n++){ ?>
-                <p>Paragraphe <?=$n?></p>
-                <div class="form-group">
-                    <div class="textarea">
-                    <input type="textarea" cols="140" rows="5" name="para<?=$n?>" class="form-control" placeholder="Entrez votre paragraphe" required autofocus>
-                    </div>
-                </div>
-                <div class="form-group row">
-                <?php
-                for($j=1;$j<=3;$j++){ ?>
+        <p>Paragraphe <?=$n?></p>
+        <div class="form-group">
+        <div class="textarea">
+        <input type="textarea" cols="140" rows="5" name="para<?=$n?>" class="form-control" placeholder="Entrez votre paragraphe" required autofocus>
+        </div>
+        </div>
+        <div class="form-group row">
+        <?php
+        for($j=1;$j<=3;$j++){ ?>
+            
+            <div class="col">
+            <input type="text" name="para<?=$n?>choix<?=$j?>" class="form-control" placeholder="Entrez votre choix" >
+            </div>
+            <div class="col">
+            <input type="number" name="para<?=$n?>choix<?=$j?>paraSuivant<?=$j?>" class="form-control" >
+            </div>
+            <?php }?>
+            <div class="form-group row">
+            <?php /*for($i=1;$i<=3;$i++){ ?>
                 
-                    <div class="col">
-                        <input type="text" name="choix<?=$j?>" class="form-control" placeholder="Entrez votre choix">
-                    </div>
-                    <div class="col">
-                        <input type="number" name="paraSuivant<?=$j?>" class="form-control"placeholder="Entrez le paragraphe suivant">
-                    </div>
-                <?php }?>
-                <div class="form-group row">
-                <?php }?>
+                <div class="col">
+                <input type="number" name="paraSuivant<?=$i?>" class="form-control" required>
                 </div>
+            <?php }*/}?>
+            </div>
+            <?php
+        }
+?>
                 <input type="submit" name ="creer" value="Créer"/>
                 
             </form>
         </div>
     
-    <?php
-}
-?>
+    
 <?php require_once "includes/footer.php"; ?>
       </div>
       </div>   
