@@ -28,10 +28,11 @@ session_start();
 $Id_Hist = $_GET['id'];?>
 
 <body>
-      <div class="container">
+    <div class="container">
          <?php require_once "includes/header.php"; ?>
 
-
+         <div class="container rounded bg-dark p-5">
+         <h2 class="text-center">Nombre de paragraphes</h2>
          <form name="NbPara" method="post" action="paragraphe_remplir.php?id=<?=$Id_Hist?>">
             <fieldset>
                <legend><p>Vous allez désormais ajouter vos choix et le paragraphe correspondant à chaque choix<br/>Combien de paragraphes voulez-vous écrire ?</p></legend>
@@ -42,7 +43,8 @@ $Id_Hist = $_GET['id'];?>
             </fieldset>
          </form>
    <?php require_once "includes/footer.php"; ?>
-      </div>
+        </div>
+    </div>
 
       <?php require_once "includes/scripts.php"; ?>
 </body>

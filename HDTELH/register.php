@@ -12,6 +12,8 @@ session_start(); ?>
       <div class="container">
          <?php require_once "includes/header.php"; ?>
 
+         <div class="container rounded bg-dark p-5">
+
          <form name="inscription" method="post" action="insert.php">
             <fieldset>
                <legend><h2>Inscription</h2></legend>
@@ -33,6 +35,7 @@ session_start(); ?>
          </form>
 
          <?php require_once "includes/footer.php"; ?>
+</div>
       </div>
 
       <?php require_once "includes/scripts.php"; ?>

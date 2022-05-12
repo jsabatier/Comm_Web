@@ -5,15 +5,12 @@ session_start();
 if (isUserConnected()) {
     
     if (isset($_POST['title'])) {
-        // the movie form has been posted : retrieve movie parameters
-        //$title = escape($_POST['title']);
-        //$shortDescription = escape($_POST['shortDescription']);
         
         $title = $_POST['title'];
         $shortDescription = $_POST['shortDescription'];
         
-        $stmt = getDb()->prepare('INSERT INTO `liste_histoire` (`Titre_Hist`,`Resume_Hist`) VALUES (?,?)');
-        $stmt->execute(array($title,$shortDescription ));
+        //$stmt = getDb()->prepare('INSERT INTO `liste_histoire` (`Titre_Hist`,`Resume_Hist`) VALUES (?,?)');
+        //$stmt->execute(array($title,$shortDescription ));
 
         $tmpFile = $_FILES['image']['tmp_name'];
         if (is_uploaded_file($tmpFile)) {
@@ -50,6 +47,7 @@ if (isUserConnected()) {
       <div class="container">
         <?php require_once "includes/header.php"; ?>
 
+        <div class="container rounded bg-dark p-2">
           <h2 class="text-center">Ajout d'une histoire</h2>
           <div class="well m-2">
             <form class="form-horizontal" role="form" enctype="multipart/form-data" action="histoire_add.php" method="post">
@@ -73,6 +71,7 @@ if (isUserConnected()) {
                   <input type="file" name="image" />
                 </div>
               </div>
+              <br/>
               <div class="form-group">
                 <div class="col-sm-4 col-sm-offset-4">
                   <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-save"></span> Enregistrer</button>
@@ -82,6 +81,7 @@ if (isUserConnected()) {
           </div>
 
           <?php require_once "includes/footer.php"; ?>
+      </div>
       </div>
 
       <?php require_once "includes/scripts.php"; ?>

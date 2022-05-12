@@ -26,7 +26,7 @@ require_once "includes/head.php";
         <?php require_once "includes/header.php"; ?>
 
         <div class="container rounded bg-dark p-2">
-            
+        <h2 class="text-center">Modification d'une histoire</h2>
                 <div class="m-2">
                 <p class= "histoireContent">
                 <?php

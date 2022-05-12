@@ -10,11 +10,12 @@
                 HDTELH</a>
         
         <div class="nav-bar item" id="navbar-collapse-target">
-            <?php if (isUserConnected()) { ?>
+            <?php if (isUserConnected()) { 
+                if(isUserAdmin()==1){?>
                 <ul class="nav navbar-nav">
                     <li><a href="histoire_add.php">Ajouter une histoire</a></li>
                 </ul>
-            <?php } ?>
+            <?php }} ?>
             <ul class="nav navbar-nav navbar-right">
                 <?php if (isUserConnected()) { ?>
                     <li class="container">

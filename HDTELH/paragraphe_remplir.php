@@ -13,7 +13,8 @@ session_start(); ?>
     <?php require_once "includes/header.php";
     $Id_Hist = $_GET['id']; ?>
 
-
+<div class="container rounded bg-dark p-5">
+<h2 class="text-center">Ecriture des paragraphes</h2>
 
 <?php
 if (!empty($_POST['nbpara'])) {
@@ -26,7 +27,7 @@ if (!empty($_POST['nbpara'])) {
                 <p>Paragraphe <?=$n?></p>
                 <div class="form-group">
                     <div class="textarea">
-                    <input type="textarea" cols="140" rows="5" name="para<?php$n?>" class="form-control" placeholder="Entrez votre paragraphe" required autofocus>
+                    <input type="textarea" cols="140" rows="5" name="para<?=$n?>" class="form-control" placeholder="Entrez votre paragraphe" required autofocus>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -34,24 +35,32 @@ if (!empty($_POST['nbpara'])) {
                 for($j=1;$j<=3;$j++){ ?>
                 
                     <div class="col">
-                        <input type="text" name="choix" class="form-control" placeholder="Entrez votre choix" required>
+                        <input type="text" name="choix<?=$j?>" class="form-control" placeholder="Entrez votre choix" required>
+                    </div>
+                    <div class="col">
+                        <input type="number" name="paraSuivant<?=$j?>" class="form-control" required>
                     </div>
                 <?php }?>
                 <div class="form-group row">
-                <?php for($i=1;$i<=3;$i++){ ?>
+                <?php /*for($i=1;$i<=3;$i++){ ?>
                 
                     <div class="col">
-                        <input type="number" name="paraSuivant" class="form-control" required>
+                        <input type="number" name="paraSuivant<?=$i?>" class="form-control" required>
                     </div>
-                <?php }}?>
+                <?php }*/}?>
                 </div>
-                <button type="submit" name ="creer" class="btn btn-default btn-dark">Créer</button>
+                <input type="submit" name ="creer" value="Créer"/>
+                
             </form>
         </div>
     
     <?php
 }
 ?>
+<?php require_once "includes/footer.php"; ?>
+      </div>
+      </div>   
 </div>
+<?php require_once "includes/scripts.php"; ?>
 </body>
 </html>

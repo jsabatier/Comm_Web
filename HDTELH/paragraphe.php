@@ -31,7 +31,7 @@ require_once "includes/head.php";
     <div class="container">
         <?php require_once "includes/header.php"; ?>
 
-        <div class="container rounded bg-white">
+        <div class="container bg-dark rounded p-5">
             
                 <div class="m-2">
                 <p class= "histoireContent">
@@ -42,7 +42,7 @@ require_once "includes/head.php";
                 <?php
                     foreach ($leschoix as $choix) { 
                         ?>
-                        <a href="paragraphe.php?id=<?=  $histoire['Id_Hist'] ?>&idp=<?= $choix['Id_Para_Suivant']?>">
+                        <a href="paragraphe.php?id=<?=  $histoire['Id_Hist'] ?>&idp=<?= $choix['Id_Para_Suivant']?>" class="choix">
                         <?= $choix['Text_Choix'] ?>
                     </br>
                         </a>
@@ -50,9 +50,10 @@ require_once "includes/head.php";
                         
                 <?php } ?>
                 </div>
-        </div>
+        
 
     <?php require_once "includes/footer.php"; ?>
+                    </div>
     </div>
 
 <?php require_once "includes/scripts.php"; ?>

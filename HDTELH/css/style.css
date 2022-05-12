@@ -1,6 +1,7 @@
 body {
     padding-top: 60px;
     background-image : url(images/fond_site.jpg);
+    color :aliceblue;
 }
 
 .footer {
@@ -30,6 +31,12 @@ a{
     color :aliceblue;  
 }
 .footer{
+    color :aliceblue;
+}
+.histoireContent{
+    color:aliceblue;
+}
+h2{
     color :aliceblue;
 }
 
