@@ -12,6 +12,18 @@ function getDb() {
     return new PDO("mysql:host=$server;dbname=$db;charset=utf8", "$username", "$password",
     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
+function isUserAdmin()
+{
+    $log =$_SESSION['login'];
+    
+    
+    $req = getDb()->prepare ('select Admin from user_et_admin where Login_User=?');
+        $req->execute(array($log));
+        $rq = $req->fetch();
+      
+    return $rq['Admin']; // here is what you really need
+}
+
 
 // Check if a user is connected
 function isUserConnected() {
