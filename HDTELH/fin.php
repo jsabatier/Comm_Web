@@ -18,10 +18,17 @@ session_start();
         <div class="container rounded bg-dark p-2">
           <h2 class="text-center">Fin de l'histoire</h2>
           <div class="well m-2">
+          </br>
             Félicitations vous avez terminé l'histoire !<br/>
+          </br>
+            <div class="col-md-5 col-sm-7">
+                <img src= "images/Chat_triomphant.jpg" alt="Chat triomphant avec marqué vers l'infini et l'au-dela au dessus de lui" title="Chat triomphant" style="width:200px; height:auto">
+            </div>
+          <div class="container p-2">
             <form name="finhist" method="post" action="index.php">
             <input type="submit" name="revenir" value="Revenir à l'accueil">
-</form>
+            </form>
+          </div>
           </div>
           <?php require_once "includes/footer.php"; ?>
       </div>
@@ -31,4 +38,3 @@ session_start();
     </body>
 
   </html>
-

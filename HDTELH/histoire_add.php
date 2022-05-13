@@ -4,7 +4,7 @@ session_start();
 
 if (isUserConnected()) {
     
-    if (isset($_POST['title'])) {
+    if (isset($_POST['title']) && isset($_POST['shortDescription']) && isset($_POST['shortDescription'])) {
         
         $title = $_POST['title'];
         $shortDescription = $_POST['shortDescription'];
@@ -61,8 +61,7 @@ if (isUserConnected()) {
               <div class="form-group">
                 <label class="col-sm-4 control-label">Résumé de l'histoire</label>
                 <div class="col-sm-6">
-                  <textarea name="shortDescription" class="form-control" placeholder="Entrez son résumé" required>
-                  </textarea>
+                  <textarea name="shortDescription" class="form-control" placeholder="Entrez son résumé" required></textarea>
                 </div>
               </div>
               <div class="form-group">

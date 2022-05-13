@@ -35,11 +35,12 @@ $Id_Hist = $_GET['id'];?>
          <h2 class="text-center">Nombre de paragraphes</h2>
          <form name="NbPara" method="post" action="paragraphe_remplir.php?id=<?=$Id_Hist?>">
             <fieldset>
-               <legend><p>Vous allez désormais ajouter vos choix et le paragraphe correspondant à chaque choix<br/>Combien de paragraphes voulez-vous écrire ?</p></legend>
-               <br>
+               <legend><p>Vous allez désormais ajouter vos choix et le paragraphe correspondant à chaque choix.<br/>Combien de paragraphes voulez-vous écrire ?</p></legend>
+               </br>
                <input type="number" name="nbpara" value=""><br>
-
-               <input type="submit" name="envoyer" value="Suivant">
+               <div class="container p-2">
+               <input type="submit" name="envoyer" value="Suivant" class="btn btn-default btn-primary">
+               </div>          
             </fieldset>
          </form>
    <?php require_once "includes/footer.php"; ?>

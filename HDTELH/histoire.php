@@ -29,7 +29,7 @@ require_once "includes/head.php";
         <div class="jumbotron">
             <div class="row">
                 <div class="col-md-5 col-sm-7">
-                    <img class="img-responsive movieImage" src="images/<?= $histoire['Im_Hist'] ?>" title="<?= $histoire['Titre_Hist'] ?>" style="width:200px; height:auto" />
+                    <img class="img-responsive movieImage" src="images/<?= $histoire['Im_Hist'] ?>" alt="<?=$histoire['Im_Hist']?>" title="<?= $histoire['Titre_Hist'] ?>" style="width:200px; height:auto" />
                 <br/>
                 </div>
                 <div class="col-md-7 col-sm-5">
@@ -44,7 +44,7 @@ require_once "includes/head.php";
 <?php if (isUserConnected()) {
     if(isUserAdmin()==1){ ?>
                     <div>
-                    <form name="modifHist" method="post" action="histoire_modifier.php?id=<?=  $histoire['Id_Hist'] ?>">
+                    <form name="modifHist" method="post" action="histoire_modifier.php?id=<?=  $histoire['Id_Hist'] ?> && nbp=0">
                         <input type="submit" name="modif" value="Modifier l'histoire">
                     </form>
                     <form name="suppHist" method="post" action="histoire_remove.php?id=<?=  $histoire['Id_Hist'] ?>">

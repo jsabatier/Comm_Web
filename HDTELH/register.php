@@ -30,7 +30,7 @@ session_start(); ?>
                </select>
             </br>
             </br>
-               <input type="submit" name="envoyer" value="S'inscrire">
+               <input type="submit" name="envoyer" value="S'inscrire" class="btn btn-default btn-primary">
             </fieldset>
          </form>
 

@@ -1,6 +1,7 @@
 body {
     padding-top: 60px;
-    background-image : url('images/fond_site.jpg');
+    padding-bottom : 60px;
+    background-image : url('../images/Fond_ecran_copie.jpg');
     color :aliceblue;
 }
 

@@ -2,6 +2,8 @@
 require_once "includes/functions.php";
 session_start();
 
+if(isset($_GET['id']) && isset($_GET['idp'])){
+
 $Id_Hist = $_GET['id'];
 $stmt = getDb()->prepare('select * from liste_histoire where Id_Hist=?');
 $stmt->execute(array($Id_Hist));
@@ -17,6 +19,11 @@ $paragraphe = $para->fetch();
 $choix = getDb()->prepare('select * from choix where Id_Hist=? and Id_Para=?');
 $choix->execute(array($Id_Hist,$Id_Para));
 $leschoix = $choix->fetchAll();
+}
+else
+{
+    echo "erreur";
+}
 ?>
 
 <!doctype html>
@@ -43,11 +50,8 @@ require_once "includes/head.php";
                     foreach ($leschoix as $choix) { 
                         ?>
                         <a href="paragraphe.php?id=<?=  $histoire['Id_Hist'] ?>&idp=<?= $choix['Id_Para_Suivant']?>" class="choix">
-                        <?= $choix['Text_Choix'] 
-                        ?>
+                        <?= $choix['Text_Choix'] ?>
                     </br>
-
-                    
                         </a>
 
                         

@@ -1,6 +1,6 @@
 <?php require_once "functions.php"; ?>
 
-<nav class="navbar bg-dark navbar-default navbar-fixed-top text-light rounded" role="navigation">
+<nav class="navbar bg-dark navbar-default navbar-fixed-top text-light rounded ml-auto" role="navigation">
     
         <div class="container">
             <a class="navbar-brand" href="index.php">
@@ -9,19 +9,22 @@
                 </svg>
                 HDTELH</a>
         
-        <div class="nav-bar item" id="navbar-collapse-target">
+        <div class="nav-bar item " id="navbar-collapse-target">
             <?php if (isUserConnected()) { 
                 if(isUserAdmin()==1){?>
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav ml-auto active">
                     <li><a href="histoire_add.php">Ajouter une histoire</a></li>
                 </ul>
+        </div>
+        <div class="nav-bar item">
             <?php }} ?>
             <ul class="nav navbar-nav navbar-right">
                 <?php if (isUserConnected()) { ?>
                     <li class="container">
-                        <a href="#" class="nav navbar-nav" >
+                        <span class="nav navbar-nav" >
+                            
                             <span class="glyphicon glyphicon-user"></span> Bienvenue, <?= $_SESSION['login'] ?> <b class="caret"></b>
-                        </a>
+                </span>
                         <ul class="nav navbar-nav">
                             <li><a href="logout.php">Se déconnecter</a></li>
                         </ul>
